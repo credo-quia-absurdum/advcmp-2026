@@ -1,0 +1,5 @@
+// reference output for test.c
+%add1 : { 5 }
+%add : { 3 }
+%cmp : { 0 }
+%z.0 : { 5 }
