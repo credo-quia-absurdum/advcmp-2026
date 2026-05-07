@@ -39,8 +39,8 @@ void emitLoadConstant(int64_t targetConstant, ProgramEmitter &emitter)
     }
 
     // Signed 12-bit constant
-    if ((targetBits & 0xFFFFFFFFFFFFF000ull) == 0ull ||
-        (targetBits & 0xFFFFFFFFFFFFF000ull) == 0xFFFFFFFFFFFFF000ull)
+    if ((targetBits & 0xFFFFFFFFFFFFF800ull) == 0ull ||
+        (targetBits & 0xFFFFFFFFFFFFF800ull) == 0xFFFFFFFFFFFFF800ull)
     {
         std::cout << "case: signed 12-bit constant" << std::endl;
 
@@ -53,8 +53,8 @@ void emitLoadConstant(int64_t targetConstant, ProgramEmitter &emitter)
     }
 
     // Signed 32-bit constant
-    const uint64_t upper32Bits = targetBits & 0xFFFFFFFF00000000ull;
-    if (upper32Bits == 0ull || upper32Bits == 0xFFFFFFFF00000000ull)
+    const uint64_t upper33Bits = targetBits & 0xFFFFFFFF80000000ull;
+    if (upper33Bits == 0ull || upper33Bits == 0xFFFFFFFF80000000ull)
     {
         std::cout << "case: signed 32-bit constant" << std::endl;
 
